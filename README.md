@@ -13,6 +13,8 @@
 
 ### UseCase
 
+requirements.md 를 기준으로 정리.
+
 - 사용자가 검색한 위치 또는 현재 위치를 기준으로 현재 날씨를 알 수 있어야 한다.
   - Location LocationBloc.search(...?)
   - Weather WeatherBloc.fetchWether(Location)
