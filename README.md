@@ -1,6 +1,4 @@
-# FlutterMeWeather
-
-Flutter Me with Weather!!!
+# Flutter Me With Weather
 
 ## 우선은 필요한 도메인 로직, UseCase 정리
 
