@@ -1,3 +1,3 @@
-# WeatherFlutter
+# FlutterMeWeather
 
 Flutter me with weather!!!
