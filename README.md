@@ -9,24 +9,30 @@
   - Repositories
 - Data
 
-## 우선은 필요한 도메인 로직, UseCase 정리
-
-### UseCase
+## 우선은 필요한 로직을 요구사항을 기준으로 정리
 
 requirements.md 를 기준으로 정리.
 
+### Domain Logics - UseCases
+
 - 사용자가 검색한 위치 또는 현재 위치를 기준으로 현재 날씨를 알 수 있어야 한다.
-  - Location LocationBloc.search(...?)
-  - Weather WeatherBloc.fetchWether(Location)
+  - Location Location.search(...?)
+  - Weather Weather.fetchWeather(Location)
 - 날씨는 최근 3일 전 날씨, 3일 후 예보를 볼 수 있어야 한다.
-  - Weather WeatherBloc.fetchWether().Last(3days)
-  - Weather WeatherBloc.fetchWether().WithIn(3days)
+  - List<Weather> Weather.fetchWether().Last(3days)
+  - List<Weather> Weather.fetchWether().WithIn(3days)
 - 앱에 진입하자마자 현재 날씨를 알 수 있어야 한다.
-- 지역을 3개 이상 선택 혹은 검색할 수 있어야 한다.
-  - AppBloc.addSearchedLocation(Location)
-  - AppBloc.removeSearchedLocation(Location)
-- 최근 조회한 지역을 알 수 있어야 한다.
-  - AppBloc.setSearchLimit(Integer)
-  - List<Location> AppBloc.getSearchedLocations()
 - 비가 오는 날은 아침에 알림으로 알려주어야 한다.
-  - WeatherBloc.alterChanges(Weather.Rainy)
+  - Time.getTime()
+  - Weather.whenRainComes(...)
+  - Weather.whenSnowComes(...)
+
+### UI Logics
+
+- 지역을 3개 이상 선택 혹은 검색할 수 있어야 한다.
+  - AppCache.save<List<Location>>(String key, List<Location>)
+  - AppCache.remove(String key)
+  - AppCache.clear()
+- 최근 조회한 지역을 알 수 있어야 한다.
+  - List<Location> AppCache.get<List<Location>>(String key)
+
