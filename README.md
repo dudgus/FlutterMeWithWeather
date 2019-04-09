@@ -36,3 +36,21 @@ requirements.md 를 기준으로 정리.
 - 최근 조회한 지역을 알 수 있어야 한다.
   - List<Location> AppCache.get<List<Location>>(String key)
 
+## Location & Weather Open API 사용
+
+### 장소 (시, 구, 동) 이름을 사용해 위치 정보 얻기
+
+Google Maps API - geocode
+
+```
+https://maps.googleapis.com/maps/api/geocode/json?language=ko&address=강남&key=[API_KEY]
+```
+
+### 장소 이름으로 오늘 날씨 & 날씨 예보 얻기
+
+OpenWeatherMap API
+
+```
+http://api.openweathermap.org/data/2.5/weather?q=Gwonseon-gu&appid=[API_KEY]
+http://api.openweathermap.org/data/2.5/forecast?q=Gwonseon-gu&appid=[API_KEY]
+```
