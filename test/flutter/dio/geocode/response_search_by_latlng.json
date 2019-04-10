@@ -1,0 +1,561 @@
+{
+  "plus_code" : {
+    "compound_code" : "7353+PV 대한민국 경기도 수원시",
+    "global_code" : "8Q997353+PV"
+  },
+  "results" : [
+    {
+      "address_components" : [
+        {
+          "long_name" : "매탄3동",
+          "short_name" : "매탄3동",
+          "types" : [ "political", "sublocality", "sublocality_level_2" ]
+        },
+        {
+          "long_name" : "영통구",
+          "short_name" : "영통구",
+          "types" : [ "political", "sublocality", "sublocality_level_1" ]
+        },
+        {
+          "long_name" : "수원시",
+          "short_name" : "수원시",
+          "types" : [ "locality", "political" ]
+        },
+        {
+          "long_name" : "경기도",
+          "short_name" : "경기도",
+          "types" : [ "administrative_area_level_1", "political" ]
+        },
+        {
+          "long_name" : "대한민국",
+          "short_name" : "KR",
+          "types" : [ "country", "political" ]
+        }
+      ],
+      "formatted_address" : "dong 421-1, 매탄3동 영통구 수원시 경기도 대한민국",
+      "geometry" : {
+        "location" : {
+          "lat" : 37.2594107,
+          "lng" : 127.0549492
+        },
+        "location_type" : "GEOMETRIC_CENTER",
+        "viewport" : {
+          "northeast" : {
+            "lat" : 37.2607596802915,
+            "lng" : 127.0562981802915
+          },
+          "southwest" : {
+            "lat" : 37.2580617197085,
+            "lng" : 127.0536002197085
+          }
+        }
+      },
+      "place_id" : "ChIJPVhKOLpEezURXWuVA5LQ6qA",
+      "plus_code" : {
+        "compound_code" : "7353+QX 대한민국 경기도 수원시",
+        "global_code" : "8Q997353+QX"
+      },
+      "types" : [ "establishment", "point_of_interest" ]
+    },
+    {
+      "address_components" : [
+        {
+          "long_name" : "４２１−１",
+          "short_name" : "４２１−１",
+          "types" : [ "premise" ]
+        },
+        {
+          "long_name" : "매탄동",
+          "short_name" : "매탄동",
+          "types" : [ "political", "sublocality", "sublocality_level_2" ]
+        },
+        {
+          "long_name" : "영통구",
+          "short_name" : "영통구",
+          "types" : [ "political", "sublocality", "sublocality_level_1" ]
+        },
+        {
+          "long_name" : "수원시",
+          "short_name" : "수원시",
+          "types" : [ "locality", "political" ]
+        },
+        {
+          "long_name" : "경기도",
+          "short_name" : "경기도",
+          "types" : [ "administrative_area_level_1", "political" ]
+        },
+        {
+          "long_name" : "대한민국",
+          "short_name" : "KR",
+          "types" : [ "country", "political" ]
+        },
+        {
+          "long_name" : "443-370",
+          "short_name" : "443-370",
+          "types" : [ "postal_code" ]
+        }
+      ],
+      "formatted_address" : "대한민국 경기도 수원시 영통구 매탄동 421-1",
+      "geometry" : {
+        "location" : {
+          "lat" : 37.2609536,
+          "lng" : 127.0543081
+        },
+        "location_type" : "ROOFTOP",
+        "viewport" : {
+          "northeast" : {
+            "lat" : 37.2623025802915,
+            "lng" : 127.0556570802915
+          },
+          "southwest" : {
+            "lat" : 37.2596046197085,
+            "lng" : 127.0529591197085
+          }
+        }
+      },
+      "place_id" : "ChIJbV0hcbpEezUR3CHl6iWxLbA",
+      "plus_code" : {
+        "compound_code" : "7363+9P 대한민국 경기도 수원시",
+        "global_code" : "8Q997363+9P"
+      },
+      "types" : [ "street_address" ]
+    },
+    {
+      "address_components" : [
+        {
+          "long_name" : "삼성DigitalCity홍보관",
+          "short_name" : "삼성DigitalCity홍보관",
+          "types" : [
+            "bus_station",
+            "establishment",
+            "point_of_interest",
+            "transit_station"
+          ]
+        },
+        {
+          "long_name" : "매탄3동",
+          "short_name" : "매탄3동",
+          "types" : [ "political", "sublocality", "sublocality_level_2" ]
+        },
+        {
+          "long_name" : "수원시",
+          "short_name" : "수원시",
+          "types" : [ "locality", "political" ]
+        },
+        {
+          "long_name" : "대한민국",
+          "short_name" : "KR",
+          "types" : [ "country", "political" ]
+        },
+        {
+          "long_name" : "443-370",
+          "short_name" : "443-370",
+          "types" : [ "postal_code" ]
+        }
+      ],
+      "formatted_address" : "대한민국 수원시 매탄3동 삼성DigitalCity홍보관",
+      "geometry" : {
+        "location" : {
+          "lat" : 37.258585,
+          "lng" : 127.057146
+        },
+        "location_type" : "GEOMETRIC_CENTER",
+        "viewport" : {
+          "northeast" : {
+            "lat" : 37.25993398029149,
+            "lng" : 127.0584949802915
+          },
+          "southwest" : {
+            "lat" : 37.25723601970849,
+            "lng" : 127.0557970197085
+          }
+        }
+      },
+      "place_id" : "ChIJbb3UlrlEezURvLWtESSi-t0",
+      "plus_code" : {
+        "compound_code" : "7354+CV 대한민국 경기도 수원시",
+        "global_code" : "8Q997354+CV"
+      },
+      "types" : [
+        "bus_station",
+        "establishment",
+        "point_of_interest",
+        "transit_station"
+      ]
+    },
+    {
+      "address_components" : [
+        {
+          "long_name" : "삼성로",
+          "short_name" : "삼성로",
+          "types" : [ "political", "sublocality", "sublocality_level_4" ]
+        },
+        {
+          "long_name" : "영통구",
+          "short_name" : "영통구",
+          "types" : [ "political", "sublocality", "sublocality_level_1" ]
+        },
+        {
+          "long_name" : "수원시",
+          "short_name" : "수원시",
+          "types" : [ "locality", "political" ]
+        },
+        {
+          "long_name" : "경기도",
+          "short_name" : "경기도",
+          "types" : [ "administrative_area_level_1", "political" ]
+        },
+        {
+          "long_name" : "대한민국",
+          "short_name" : "KR",
+          "types" : [ "country", "political" ]
+        }
+      ],
+      "formatted_address" : "대한민국 경기도 수원시 영통구 삼성로",
+      "geometry" : {
+        "bounds" : {
+          "northeast" : {
+            "lat" : 37.2678115,
+            "lng" : 127.0694922
+          },
+          "southwest" : {
+            "lat" : 37.24738079999999,
+            "lng" : 127.0483148
+          }
+        },
+        "location" : {
+          "lat" : 37.2594571,
+          "lng" : 127.0594335
+        },
+        "location_type" : "APPROXIMATE",
+        "viewport" : {
+          "northeast" : {
+            "lat" : 37.2678115,
+            "lng" : 127.0694922
+          },
+          "southwest" : {
+            "lat" : 37.24738079999999,
+            "lng" : 127.0483148
+          }
+        }
+      },
+      "place_id" : "ChIJJ5ufVLhEezURHwa_0XyyyVA",
+      "types" : [ "political", "sublocality", "sublocality_level_4" ]
+    },
+    {
+      "address_components" : [
+        {
+          "long_name" : "매탄3동",
+          "short_name" : "매탄3동",
+          "types" : [ "political", "sublocality", "sublocality_level_2" ]
+        },
+        {
+          "long_name" : "영통구",
+          "short_name" : "영통구",
+          "types" : [ "political", "sublocality", "sublocality_level_1" ]
+        },
+        {
+          "long_name" : "수원시",
+          "short_name" : "수원시",
+          "types" : [ "locality", "political" ]
+        },
+        {
+          "long_name" : "경기도",
+          "short_name" : "경기도",
+          "types" : [ "administrative_area_level_1", "political" ]
+        },
+        {
+          "long_name" : "대한민국",
+          "short_name" : "KR",
+          "types" : [ "country", "political" ]
+        },
+        {
+          "long_name" : "443-370",
+          "short_name" : "443-370",
+          "types" : [ "postal_code" ]
+        }
+      ],
+      "formatted_address" : "대한민국 경기도 수원시 영통구 매탄3동",
+      "geometry" : {
+        "bounds" : {
+          "northeast" : {
+            "lat" : 37.265769,
+            "lng" : 127.0646878
+          },
+          "southwest" : {
+            "lat" : 37.2440005,
+            "lng" : 127.035699
+          }
+        },
+        "location" : {
+          "lat" : 37.256463,
+          "lng" : 127.0431946
+        },
+        "location_type" : "APPROXIMATE",
+        "viewport" : {
+          "northeast" : {
+            "lat" : 37.265769,
+            "lng" : 127.0646878
+          },
+          "southwest" : {
+            "lat" : 37.2440005,
+            "lng" : 127.035699
+          }
+        }
+      },
+      "place_id" : "ChIJyRbGr6REezURwDi-pB-yXRc",
+      "types" : [ "political", "sublocality", "sublocality_level_2" ]
+    },
+    {
+      "address_components" : [
+        {
+          "long_name" : "443-373",
+          "short_name" : "443-373",
+          "types" : [ "postal_code" ]
+        },
+        {
+          "long_name" : "매탄3동",
+          "short_name" : "매탄3동",
+          "types" : [ "political", "sublocality", "sublocality_level_2" ]
+        },
+        {
+          "long_name" : "영통구",
+          "short_name" : "영통구",
+          "types" : [ "political", "sublocality", "sublocality_level_1" ]
+        },
+        {
+          "long_name" : "수원시",
+          "short_name" : "수원시",
+          "types" : [ "locality", "political" ]
+        },
+        {
+          "long_name" : "경기도",
+          "short_name" : "경기도",
+          "types" : [ "administrative_area_level_1", "political" ]
+        },
+        {
+          "long_name" : "대한민국",
+          "short_name" : "KR",
+          "types" : [ "country", "political" ]
+        }
+      ],
+      "formatted_address" : "대한민국 경기도 수원시 영통구 매탄3동",
+      "geometry" : {
+        "bounds" : {
+          "northeast" : {
+            "lat" : 37.265769,
+            "lng" : 127.0646878
+          },
+          "southwest" : {
+            "lat" : 37.2440005,
+            "lng" : 127.035699
+          }
+        },
+        "location" : {
+          "lat" : 37.258571,
+          "lng" : 127.0427175
+        },
+        "location_type" : "APPROXIMATE",
+        "viewport" : {
+          "northeast" : {
+            "lat" : 37.265769,
+            "lng" : 127.0646878
+          },
+          "southwest" : {
+            "lat" : 37.2440005,
+            "lng" : 127.035699
+          }
+        }
+      },
+      "place_id" : "ChIJyRbGr6REezURY4a061if0KU",
+      "types" : [ "postal_code" ]
+    },
+    {
+      "address_components" : [
+        {
+          "long_name" : "영통구",
+          "short_name" : "영통구",
+          "types" : [ "political", "sublocality", "sublocality_level_1" ]
+        },
+        {
+          "long_name" : "수원시",
+          "short_name" : "수원시",
+          "types" : [ "locality", "political" ]
+        },
+        {
+          "long_name" : "경기도",
+          "short_name" : "경기도",
+          "types" : [ "administrative_area_level_1", "political" ]
+        },
+        {
+          "long_name" : "대한민국",
+          "short_name" : "KR",
+          "types" : [ "country", "political" ]
+        }
+      ],
+      "formatted_address" : "대한민국 경기도 수원시 영통구",
+      "geometry" : {
+        "bounds" : {
+          "northeast" : {
+            "lat" : 37.3205036,
+            "lng" : 127.0904507
+          },
+          "southwest" : {
+            "lat" : 37.2313053,
+            "lng" : 127.0319068
+          }
+        },
+        "location" : {
+          "lat" : 37.2594897,
+          "lng" : 127.0466381
+        },
+        "location_type" : "APPROXIMATE",
+        "viewport" : {
+          "northeast" : {
+            "lat" : 37.3205036,
+            "lng" : 127.0904507
+          },
+          "southwest" : {
+            "lat" : 37.2313053,
+            "lng" : 127.0319068
+          }
+        }
+      },
+      "place_id" : "ChIJo7eaL0hbezURnKmfARSKyU0",
+      "types" : [ "political", "sublocality", "sublocality_level_1" ]
+    },
+    {
+      "address_components" : [
+        {
+          "long_name" : "수원시",
+          "short_name" : "수원시",
+          "types" : [ "locality", "political" ]
+        },
+        {
+          "long_name" : "경기도",
+          "short_name" : "경기도",
+          "types" : [ "administrative_area_level_1", "political" ]
+        },
+        {
+          "long_name" : "대한민국",
+          "short_name" : "KR",
+          "types" : [ "country", "political" ]
+        }
+      ],
+      "formatted_address" : "대한민국 경기도 수원시",
+      "geometry" : {
+        "bounds" : {
+          "northeast" : {
+            "lat" : 37.353075,
+            "lng" : 127.0904507
+          },
+          "southwest" : {
+            "lat" : 37.2245524,
+            "lng" : 126.9254886
+          }
+        },
+        "location" : {
+          "lat" : 37.2635727,
+          "lng" : 127.0286009
+        },
+        "location_type" : "APPROXIMATE",
+        "viewport" : {
+          "northeast" : {
+            "lat" : 37.353075,
+            "lng" : 127.0904507
+          },
+          "southwest" : {
+            "lat" : 37.2245524,
+            "lng" : 126.9254886
+          }
+        }
+      },
+      "place_id" : "ChIJEUZ2IApDezURybRd7gIwN_E",
+      "types" : [ "locality", "political" ]
+    },
+    {
+      "address_components" : [
+        {
+          "long_name" : "경기도",
+          "short_name" : "경기도",
+          "types" : [ "administrative_area_level_1", "political" ]
+        },
+        {
+          "long_name" : "대한민국",
+          "short_name" : "KR",
+          "types" : [ "country", "political" ]
+        }
+      ],
+      "formatted_address" : "대한민국 경기도",
+      "geometry" : {
+        "bounds" : {
+          "northeast" : {
+            "lat" : 38.302671,
+            "lng" : 127.8582526
+          },
+          "southwest" : {
+            "lat" : 36.89396860000001,
+            "lng" : 126.333561
+          }
+        },
+        "location" : {
+          "lat" : 37.41379999999999,
+          "lng" : 127.5183
+        },
+        "location_type" : "APPROXIMATE",
+        "viewport" : {
+          "northeast" : {
+            "lat" : 38.302671,
+            "lng" : 127.8582526
+          },
+          "southwest" : {
+            "lat" : 36.89396860000001,
+            "lng" : 126.333561
+          }
+        }
+      },
+      "place_id" : "ChIJjbZ-5eR5fDURwrX21pgfDAE",
+      "types" : [ "administrative_area_level_1", "political" ]
+    },
+    {
+      "address_components" : [
+        {
+          "long_name" : "대한민국",
+          "short_name" : "KR",
+          "types" : [ "country", "political" ]
+        }
+      ],
+      "formatted_address" : "대한민국",
+      "geometry" : {
+        "bounds" : {
+          "northeast" : {
+            "lat" : 38.63400000000001,
+            "lng" : 131.1603
+          },
+          "southwest" : {
+            "lat" : 33.0041,
+            "lng" : 124.5863
+          }
+        },
+        "location" : {
+          "lat" : 35.907757,
+          "lng" : 127.766922
+        },
+        "location_type" : "APPROXIMATE",
+        "viewport" : {
+          "northeast" : {
+            "lat" : 38.63400000000001,
+            "lng" : 131.1603
+          },
+          "southwest" : {
+            "lat" : 33.0041,
+            "lng" : 124.5863
+          }
+        }
+      },
+      "place_id" : "ChIJm7oRy-tVZDURS9uIugCbJJE",
+      "types" : [ "country", "political" ]
+    }
+  ],
+  "status" : "OK"
+}

@@ -17,6 +17,6 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.byType(Text), findsOneWidget);
     var text = find.byType(Text).evaluate().single.widget as Text;
-    print(text.data);
+    print(text.data + ' done');
   });
 }

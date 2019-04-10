@@ -1,0 +1,69 @@
+{
+  "results" : [
+    {
+      "address_components" : [
+        {
+          "long_name" : "매탄3동",
+          "short_name" : "매탄3동",
+          "types" : [ "political", "sublocality", "sublocality_level_2" ]
+        },
+        {
+          "long_name" : "영통구",
+          "short_name" : "영통구",
+          "types" : [ "political", "sublocality", "sublocality_level_1" ]
+        },
+        {
+          "long_name" : "수원시",
+          "short_name" : "수원시",
+          "types" : [ "locality", "political" ]
+        },
+        {
+          "long_name" : "경기도",
+          "short_name" : "경기도",
+          "types" : [ "administrative_area_level_1", "political" ]
+        },
+        {
+          "long_name" : "대한민국",
+          "short_name" : "KR",
+          "types" : [ "country", "political" ]
+        },
+        {
+          "long_name" : "443-370",
+          "short_name" : "443-370",
+          "types" : [ "postal_code" ]
+        }
+      ],
+      "formatted_address" : "대한민국 경기도 수원시 영통구 매탄3동",
+      "geometry" : {
+        "bounds" : {
+          "northeast" : {
+            "lat" : 37.265769,
+            "lng" : 127.0646878
+          },
+          "southwest" : {
+            "lat" : 37.2440005,
+            "lng" : 127.035699
+          }
+        },
+        "location" : {
+          "lat" : 37.256463,
+          "lng" : 127.0431946
+        },
+        "location_type" : "APPROXIMATE",
+        "viewport" : {
+          "northeast" : {
+            "lat" : 37.265769,
+            "lng" : 127.0646878
+          },
+          "southwest" : {
+            "lat" : 37.2440005,
+            "lng" : 127.035699
+          }
+        }
+      },
+      "place_id" : "ChIJyRbGr6REezURwDi-pB-yXRc",
+      "types" : [ "political", "sublocality", "sublocality_level_2" ]
+    }
+  ],
+  "status" : "OK"
+}
