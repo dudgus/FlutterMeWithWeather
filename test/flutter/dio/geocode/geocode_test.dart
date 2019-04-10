@@ -1,40 +1,53 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_weather/data/location/location.dart';
+import 'package:flutter_weather/data/location/model/location_model.dart';
 import 'package:meta/meta.dart';
 import 'package:test/test.dart';
 
 void main() {
-  test('get address by search keyword', () async {
-    final Dio dio = Dio();
-    final uri = buildSearchUri(key: 'address', value: '매탄3동');
+  group('get address by search keyword', () {
+    Response response;
 
-    print(uri.toString());
+    setUpAll(() async {
+      Uri uri = _buildSearchUri(key: 'address', value: '수원 매탄동');
+      response = await Dio().get(uri.toString());
+    });
 
-    Response response = await dio.get(uri.toString());
-    expect(response, isNotNull);
+    test('check response', () {
+      expect(response, isNotNull);
+      expect(response.statusCode, equals(200));
+    });
 
-    print(response.statusCode);
-    print(response.data);
+    test('check json serialized data', () {
+      List<Address> addresses = _toAddressList(response.data);
+      print(addresses[0].formatted);
+    });
   });
 
-  test('get address by latlng', () async {
-    final latLng = await getLocation();
+  group('get address by lat & lng', () {
+    Response response;
 
-    final Dio dio = Dio();
-    final uri = buildSearchUri(
-        key: 'latlng', value: '${latLng.latitude},${latLng.longitude}');
+    setUpAll(() async {
+      LatLng location = await getLocation();
+      final uri = _buildSearchUri(
+          key: 'latlng', value: '${location.lat},${location.lng}');
+      response = await Dio().get(uri.toString());
+    });
 
-    print(uri.toString());
+    test('check response', () {
+      expect(response, isNotNull);
+      expect(response.statusCode, equals(200));
+    });
 
-    Response response = await dio.get(uri.toString());
-    expect(response, isNotNull);
-
-    print(response.statusCode);
-    print(response.data);
+    test('check json serialized data', () {
+      List<Address> addresses = _toAddressList(response.data);
+      addresses.forEach((address) => { print(address.formatted) });
+    });
   });
 }
 
-Uri buildSearchUri({@required String key, @required String value}) {
+Uri _buildSearchUri(
+    {String lang = 'ko', @required String key, @required String value}) {
   final String apiBaseUrl = 'maps.googleapis.com';
   final String apiPath = '/maps/api';
   final String apiEndPoint = '/geocode/json';
@@ -45,8 +58,13 @@ Uri buildSearchUri({@required String key, @required String value}) {
       host: apiBaseUrl,
       path: '$apiPath$apiEndPoint',
       queryParameters: {
-        'language': 'ko',
+        'language': lang,
         'key': apiKey,
         key: value,
       });
+}
+
+List<Address> _toAddressList(json) {
+  Iterable l = json['results'];
+  return l.map((model) => Address.fromJson(model)).toList();
 }
