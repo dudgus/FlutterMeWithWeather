@@ -3,16 +3,22 @@
 
 ## 2019-04-10
 
+- 한일
+    - data/location/location.dart : 현재 위치 (Latitude, Longitude) 얻는 API 작성
+    - data/weather/weather.dart : 경도와 위도에 해당하는 위치의 날씨를 얻는 API 작성
+    - test/data/location, test/data/weather : 관련 테스트 케이스 작성
+- 다음
+    - UI 레이어에 필요한 Feature를 BLoC 팬턴을 사용해서 만들자. 수준으로 만드는 것이 다음 단계가 되겠다.
+    - 당연히 UseCase는 Abstract 혹은 Interface 수준으로 외부 dependency 를 끊어야 하겠다.
+    
+### BLoC 패턴
 
-- 두 가지 경우가 존재
-  - 현재 위치, 위도와 경도를 기준으로 주소를 찾는 것
-  - 사용자가 원하는 위치를 직접 검색하여 주소를 찾는 것
-- 현재 위치 (Latitude, Longitude) 얻는 함수 작성 
-- '수원 매탄3동' 및 경도와 위도로 주소를 찾는 REST API 테스트
-- 이렇게 찾은 주소를 기반으로 OpenWeatherMap API를 사용해 도시, 동 이름을 기준으로 날씨 검색
-  - 다만 OpenWeatherMap API는 영어만 기입받기 때문에 주소를 한글과 영어 두 벌을 가지고 있어야함
+- [Flutter BLoC Package](https://medium.com/flutter-community/flutter-bloc-package-295b53e95c5c) 
+- [BLoC Architecture — Why so important?](https://medium.com/flutter-community/bloc-architecture-why-so-important-d9b29f06680e)
 
-악마는 DETAIL 에 있다고 날씨 앱이 생각보다 복잡해지네? ㅎ
+### 앱 디렉토리 구조
+
+- [Scalable app structure in flutter](https://hackernoon.com/scalable-app-structure-in-flutter-dad61a4bc389)
 
 ## 2019-04-09
 
