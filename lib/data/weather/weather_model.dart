@@ -18,7 +18,9 @@ class Weather {
   @JsonKey(name: 'dt')
   final int time;
 
-  Weather(this.main, this.summary, this.wind, this.cloud, this.time);
+  String name;
+
+  Weather(this.main, this.summary, this.wind, this.cloud, this.time, this.name);
 
   factory Weather.fromJson(Map<String, dynamic> json) =>
       _$WeatherFromJson(json);
@@ -57,6 +59,10 @@ class Summary {
 
   factory Summary.fromJson(Map<String, dynamic> json) =>
       _$SummaryFromJson(json);
+
+  String toString() {
+    return '$id - $main: $description, $icon';
+  }
 }
 
 

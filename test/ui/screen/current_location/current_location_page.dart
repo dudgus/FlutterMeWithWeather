@@ -2,14 +2,14 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_weather/data/location/location.dart';
-import 'package:flutter_weather/data/location/model/location_model.dart';
+import 'package:flutter_weather/data/location/location_model.dart';
 
-class GetLocationPage extends StatefulWidget {
+class CurrentLocationPage extends StatefulWidget {
   @override
-  _GetLocationPageState createState() => _GetLocationPageState();
+  _CurrentLocationPageState createState() => _CurrentLocationPageState();
 }
 
-class _GetLocationPageState extends State<GetLocationPage> {
+class _CurrentLocationPageState extends State<CurrentLocationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

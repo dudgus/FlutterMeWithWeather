@@ -1,5 +1,5 @@
 import 'package:flutter_weather/data/location/location.dart';
-import 'package:flutter_weather/data/location/model/location_model.dart';
+import 'package:flutter_weather/data/location/location_model.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -17,6 +17,7 @@ void main() {
     // 37.2593553, 127.0547372 - 매탄동
     var location = LatLng(37.2593553, 127.0547372);
     List<Address> addresses = await getAddresses(location: location);
+    addresses.forEach((address) => print(address.formatted));
     expect(addresses.length > 0, true);
   });
 }

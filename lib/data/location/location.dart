@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_weather/data/location/model/location_model.dart';
+import 'package:flutter_weather/data/location/location_model.dart';
 import 'package:location/location.dart';
 import 'package:meta/meta.dart';
 
