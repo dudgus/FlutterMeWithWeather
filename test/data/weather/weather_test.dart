@@ -1,6 +1,6 @@
 
-import 'package:flutter_weather/data/location/model/location_model.dart';
-import 'package:flutter_weather/data/weather/model/weather_model.dart';
+import 'package:flutter_weather/data/location/location_model.dart';
+import 'package:flutter_weather/data/weather/weather_model.dart';
 import 'package:flutter_weather/data/weather/weather.dart';
 import 'package:test/test.dart';
 

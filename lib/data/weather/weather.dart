@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_weather/data/location/location.dart';
-import 'package:flutter_weather/data/location/model/location_model.dart';
-import 'package:flutter_weather/data/weather/model/weather_model.dart';
+import 'package:flutter_weather/data/location/location_model.dart';
+import 'package:flutter_weather/data/weather/weather_model.dart';
 
 final String _apiBaseUrl = 'api.openweathermap.org';
 final String _apiPath = '/data/2.5';

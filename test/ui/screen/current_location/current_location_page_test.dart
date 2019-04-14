@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_weather/ui/test/getlocation/getlocation_page.dart';
+import 'current_location_page.dart';
 
 void main() {
   testWidgets('verify location from GetLocationPage',
@@ -8,7 +8,7 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         title: 'GetLocation',
-        home: GetLocationPage(),
+        home: CurrentLocationPage(),
       ),
     );
 
