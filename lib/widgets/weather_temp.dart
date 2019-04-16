@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Temperature extends StatelessWidget {
+class WeatherTemp extends StatelessWidget {
   final double temperature;
   final double low;
   final double high;
 
-  Temperature({
+  WeatherTemp({
     Key key,
     this.temperature,
     this.low,

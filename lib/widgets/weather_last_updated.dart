@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:meta/meta.dart';
 
-class LastUpdated extends StatelessWidget {
+class WeatherLastUpdated extends StatelessWidget {
   final DateTime dateTime;
 
-  LastUpdated({Key key, @required this.dateTime})
+  WeatherLastUpdated({Key key, @required this.dateTime})
       : assert(dateTime != null),
         super(key: key);
 

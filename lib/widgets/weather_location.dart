@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:meta/meta.dart';
 
-class Location extends StatelessWidget {
+class WeatherLocation extends StatelessWidget {
   final String location;
 
-  Location({Key key, @required this.location})
+  WeatherLocation({Key key, @required this.location})
       : assert(location != null),
         super(key: key);
 

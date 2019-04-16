@@ -16,7 +16,7 @@ class _CurrentLocationPageState extends State<CurrentLocationPage> {
       appBar: AppBar(),
       body: Center(
         child: FutureBuilder(
-          future: getLocation(),
+          future: getLatLng(),
           builder: (context, AsyncSnapshot<LatLng> snapshot) {
             if (!snapshot.hasData) {
               return CircularProgressIndicator();

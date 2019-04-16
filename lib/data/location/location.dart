@@ -2,13 +2,14 @@ import 'package:dio/dio.dart';
 import 'package:flutter_weather/data/location/location_model.dart';
 import 'package:location/location.dart';
 import 'package:meta/meta.dart';
+import 'package:rxdart/rxdart.dart';
 
 final String _apiBaseUrl = 'maps.googleapis.com';
 final String _apiPath = '/maps/api';
 final String _apiEndPoint = '/geocode/json';
 final String _apiKey = 'AIzaSyB582MDHjcgKpowp5c8f--P6ZjzuoB8wOA';
 
-Future<LatLng> getLocation() async {
+Future<LatLng> getLatLng() async {
   var latLng;
   try {
     LocationData data = await Location().getLocation();

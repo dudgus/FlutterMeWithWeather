@@ -2,14 +2,14 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_weather/blocs/weather_bloc.dart';
-import 'package:flutter_weather/widgets/combine_weather_temperature.dart';
+import 'package:flutter_weather/widgets/weather_temp_combined.dart';
 import 'package:flutter_weather/widgets/gradient_container.dart';
-import 'package:flutter_weather/widgets/last_updated.dart';
-import 'package:flutter_weather/widgets/location.dart';
+import 'package:flutter_weather/widgets/weather_last_updated.dart';
+import 'package:flutter_weather/widgets/weather_location.dart';
 
 class WeatherPage extends StatefulWidget {
 
-  final Address address;
+  final Location address;
 
   WeatherPage({this.address});
 
@@ -37,7 +37,7 @@ class _WeatherPageState extends State<WeatherPage> {
 
   @override
   Widget build(BuildContext context) {
-    _weatherBloc.updateCurrentWeather(address: widget.address);
+    _weatherBloc.updateWeather(location: widget.address);
 
     return Scaffold(
       appBar: _buildAppBar(),
@@ -77,7 +77,7 @@ class _WeatherPageState extends State<WeatherPage> {
               color: this._color,
               child: RefreshIndicator(
                 onRefresh: () {
-                  _weatherBloc.updateCurrentWeather();
+                  _weatherBloc.updateWeather();
                   return _refreshCompleter.future;
                 },
                 child: ListView(
@@ -85,16 +85,16 @@ class _WeatherPageState extends State<WeatherPage> {
                     Padding(
                       padding: EdgeInsets.only(top: 100.0),
                       child: Center(
-                        child: Location(location: weather.city),
+                        child: WeatherLocation(location: weather.city),
                       ),
                     ),
                     Center(
-                      child: LastUpdated(dateTime: weather.time),
+                      child: WeatherLastUpdated(dateTime: weather.time),
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 50.0),
                       child: Center(
-                        child: CombinedWeatherTemperature(
+                        child: WeatherTempCombined(
                           weather: weather,
                         ),
                       ),

@@ -4,7 +4,7 @@ import 'package:test/test.dart';
 
 void main() {
   test('get current location', () async {
-    var location = await getLocation();
+    var location = await getLatLng();
     expect(location, isNotNull);
   });
 

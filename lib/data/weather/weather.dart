@@ -9,18 +9,18 @@ final String _apiKey = '7eb5b98821e6ef05e4c37c8efba059b5';
 final String _weatherEndPoint = '/weather';
 final String _forecastEndPoint = '/forecast';
 
-Future<Weather> getWeather({LatLng location}) async {
-  if (location == null) location = await getLocation();
+Future<Weather> getWeather({LatLng latLng}) async {
+  if (latLng == null) latLng = await getLatLng();
 
-  final uri = _buildUri(_weatherEndPoint, location);
+  final uri = _buildUri(_weatherEndPoint, latLng);
   Response response = await Dio().get(uri.toString());
   return (response.statusCode == 200) ? Weather.fromJson(response.data) : null;
 }
 
-Future<List<Weather>> getForecasts({LatLng location}) async {
-  if (location == null) location = await getLocation();
+Future<List<Weather>> getForecasts({LatLng latLng}) async {
+  if (latLng == null) latLng = await getLatLng();
 
-  final uri = _buildUri(_forecastEndPoint, location);
+  final uri = _buildUri(_forecastEndPoint, latLng);
   Response response = await Dio().get(uri.toString());
   return (response.statusCode == 200)
       ? (response.data['list'] as List)

@@ -19,8 +19,8 @@ class Weather {
   final double windSpeed;
   final double windDeg;
   final double clouds;
-  final String city;
   final DateTime time;
+  String city;
 
   Weather(
       this.code,
@@ -34,19 +34,19 @@ class Weather {
       this.windSpeed,
       this.windDeg,
       this.clouds,
-      this.city,
-      this.time);
+      this.time,
+      this.city);
 
   String toString() {
     return '$city ($code) : $desc $temp $time';
   }
 }
 
-class Address {
-  final LatLng location;
-  final String address;
+class Location {
+  final LatLng latLng;
+  final String city;
 
-  Address({this.location, this.address});
+  Location({this.latLng, this.city});
 }
 
 class WeatherBloc {
@@ -57,29 +57,36 @@ class WeatherBloc {
 
   Observable<List<Weather>> get forecast => _forecast.stream;
 
-  void updateCurrentWeather({Address address}) async {
-    LatLng location =
-        (address == null) ? await data.getLocation() : address.location;
-    Weather weather = await _convert(await data.getWeather(location: location));
+  void updateWeather({Location location}) async {
+    LatLng latLng = await _getLatLng(location);
+    Weather weather = _convert(await data.getWeather(latLng: latLng));
+    weather.city = await _getKorFormattedCityName(weather);
+
     _weather.sink.add(weather);
 
-    _updateForecasts(
-        address: Address(location: location, address: weather.city));
+    _updateForecasts(Location(latLng: latLng, city: weather.city));
   }
 
-  void _updateForecasts({Address address}) async {
-    LatLng location =
-        (address == null) ? await data.getLocation() : address.location;
-    List<data.Weather> weathers = await data.getForecasts(location: location);
+  void _updateForecasts(Location location) async {
+    List<data.Weather> weathers =
+        await data.getForecasts(latLng: location.latLng);
 
-    print('length: ${weathers.length}');
+    List<Weather> forecast = List();
+    weathers.forEach((weather) {
+      weather.name = location.city;
+      forecast.add(_convert(weather));
+    });
 
-    List<Weather> forecasts;
-    weathers.forEach((weather) async => forecasts.add(await _convert(weather,
-        given: Address(location: location, address: address.address))));
+    print('forecast: ${forecast.length}');
+
+    _forecast.sink.add(forecast);
   }
 
-  Future<Weather> _convert(data.Weather weather, {Address given}) async {
+  Future<LatLng> _getLatLng(Location location) async {
+    return (location == null) ? await data.getLatLng() : location.latLng;
+  }
+
+  Weather _convert(data.Weather weather, {Location given}) {
     final int code = weather.summary[0].id;
     final String main = weather.summary[0].main;
     final String desc = _convertDesc(code);
@@ -91,21 +98,20 @@ class WeatherBloc {
     final double windSpeed = weather.wind.speed;
     final double windDeg = weather.wind.deg;
     final double clouds = weather.cloud.all;
+    final String city = weather.name;
     final DateTime time =
         DateTime.fromMicrosecondsSinceEpoch(weather.time * 1000);
 
-    String city;
-    if (given == null) {
-      data.Address address = await data.getAddress(query: weather.name);
-      city = _getFormatted(address);
-    } else
-      city = given.address;
-
     return Weather(code, main, desc, temp, tempMax, tempMin, pressure, humidity,
-        windSpeed, windDeg, clouds, city, time);
+        windSpeed, windDeg, clouds, time, city);
   }
 
-  String _getFormatted(data.Address address) {
+  Future<String> _getKorFormattedCityName(Weather weather) async {
+    data.Address address = await data.getAddress(query: weather.city);
+    return _pickLastThreeNames(address);
+  }
+
+  String _pickLastThreeNames(data.Address address) {
     String formatted = '';
     List<String> split = address.formatted.split(' ');
     if (split.length > 3) {

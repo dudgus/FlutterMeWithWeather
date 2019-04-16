@@ -28,7 +28,7 @@ void main() {
     Response response;
 
     setUpAll(() async {
-      LatLng location = await getLocation();
+      LatLng location = await getLatLng();
       final uri = _buildSearchUri(
           key: 'latlng', value: '${location.lat},${location.lng}');
       response = await Dio().get(uri.toString());
