@@ -18,9 +18,12 @@ class Weather {
   @JsonKey(name: 'dt')
   final int time;
 
+  @JsonKey(name: 'dt_text')
+  final String timeText;
+
   String name;
 
-  Weather(this.main, this.summary, this.wind, this.cloud, this.time, this.name);
+  Weather(this.main, this.summary, this.wind, this.cloud, this.time, this.timeText, this.name);
 
   factory Weather.fromJson(Map<String, dynamic> json) =>
       _$WeatherFromJson(json);

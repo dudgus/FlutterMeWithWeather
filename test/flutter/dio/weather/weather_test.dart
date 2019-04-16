@@ -42,9 +42,10 @@ void main() {
     });
 
     test('check json serialized data', () {
-      var forecasts = (response.data['list'] as List)
+      List<Weather> forecasts = (response.data['list'] as List)
           .map((model) => Weather.fromJson(model))
           .toList();
+
       expect(forecasts, isNotNull);
       expect(forecasts[0], isNotNull);
       expect(forecasts[0].summary, isNotNull);

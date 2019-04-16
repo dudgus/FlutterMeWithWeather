@@ -20,11 +20,13 @@ class Address {
 
 @JsonSerializable()
 class AddressComponent {
+  @JsonKey(name: 'long_name')
   final String longName;
+  @JsonKey(name: 'short_name')
   final String shortName;
-  final String type;
+  final List<String> types;
 
-  AddressComponent(this.longName, this.shortName, this.type);
+  AddressComponent(this.longName, this.shortName, this.types);
 
   factory AddressComponent.fromJson(Map<String, dynamic> json) =>
       _$AddressComponentFromJson(json);

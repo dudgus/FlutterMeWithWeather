@@ -26,15 +26,17 @@ Map<String, dynamic> _$AddressToJson(Address instance) => <String, dynamic>{
     };
 
 AddressComponent _$AddressComponentFromJson(Map<String, dynamic> json) {
-  return AddressComponent(json['longName'] as String,
-      json['shortName'] as String, json['type'] as String);
+  return AddressComponent(
+      json['long_name'] as String,
+      json['short_name'] as String,
+      (json['types'] as List)?.map((e) => e as String)?.toList());
 }
 
 Map<String, dynamic> _$AddressComponentToJson(AddressComponent instance) =>
     <String, dynamic>{
-      'longName': instance.longName,
-      'shortName': instance.shortName,
-      'type': instance.type
+      'long_name': instance.longName,
+      'short_name': instance.shortName,
+      'types': instance.types
     };
 
 Geometry _$GeometryFromJson(Map<String, dynamic> json) {
