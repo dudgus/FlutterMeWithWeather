@@ -18,7 +18,7 @@ class Weather {
   @JsonKey(name: 'dt')
   final int time;
 
-  @JsonKey(name: 'dt_text')
+  @JsonKey(name: 'dt_txt')
   final String timeText;
 
   String name;

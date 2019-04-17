@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_weather/blocs/weather_bloc.dart';
-import 'package:flutter_weather/widgets/weather_temp.dart';
-import 'package:flutter_weather/widgets/weather_condition.dart';
+import 'package:flutter_weather/widgets/weather_today/weather_temp.dart';
+import 'package:flutter_weather/widgets/weather_today/weather_condition.dart';
 
 import 'package:meta/meta.dart';
 

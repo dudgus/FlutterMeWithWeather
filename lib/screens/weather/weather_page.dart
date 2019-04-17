@@ -2,13 +2,13 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_weather/blocs/weather_bloc.dart';
-import 'package:flutter_weather/widgets/weather_temp_combined.dart';
+import 'package:flutter_weather/data/assets/assets.dart';
+import 'package:flutter_weather/widgets/weather_today/weather_temp_combined.dart';
 import 'package:flutter_weather/widgets/gradient_container.dart';
-import 'package:flutter_weather/widgets/weather_last_updated.dart';
-import 'package:flutter_weather/widgets/weather_location.dart';
+import 'package:flutter_weather/widgets/weather_today/weather_last_updated.dart';
+import 'package:flutter_weather/widgets/weather_today/weather_location.dart';
 
 class WeatherPage extends StatefulWidget {
-
   final Location address;
 
   WeatherPage({this.address});
@@ -64,9 +64,9 @@ class _WeatherPageState extends State<WeatherPage> {
   Widget _buildBody() {
     return StreamBuilder(
         stream: _weatherBloc.weather,
-        builder: (context, AsyncSnapshot<Weather> snapshot) {
-          if (snapshot.hasData) {
-            Weather weather = snapshot.data;
+        builder: (context, AsyncSnapshot<Weather> weatherSnapshot) {
+          if (weatherSnapshot.hasData) {
+            Weather weather = weatherSnapshot.data;
 
             _updateThemeColor(weather.code);
 
@@ -88,22 +88,45 @@ class _WeatherPageState extends State<WeatherPage> {
                         child: WeatherLocation(location: weather.city),
                       ),
                     ),
-                    Center(
-                      child: WeatherLastUpdated(dateTime: weather.time),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: Center(
+                        child: WeatherLastUpdated(dateTime: weather.time),
+                      ),
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(vertical: 50.0),
+                      padding: EdgeInsets.symmetric(vertical: 30.0),
                       child: Center(
                         child: WeatherTempCombined(
                           weather: weather,
                         ),
                       ),
                     ),
+                    StreamBuilder(
+                        stream: _weatherBloc.forecast,
+                        builder: (
+                          context,
+                          AsyncSnapshot<List<Weather>> forecastSnapshot,
+                        ) {
+                          if (forecastSnapshot.hasData) {
+                            List<Widget> forecastWidgets = List();
+                            forecastSnapshot.data.forEach((weather) {
+                              forecastWidgets
+                                  .add(_getWeatherIcon(weather.code));
+                            });
+
+                            return Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: forecastWidgets,
+                            );
+                          }
+                          return CircularProgressIndicator();
+                        }),
                   ],
                 ),
               ),
             );
-          } else if (snapshot.hasError) {
+          } else if (weatherSnapshot.hasError) {
             return SnackBar(
               content: Text('Unknown Network Error Happens.'),
             );
@@ -133,5 +156,31 @@ class _WeatherPageState extends State<WeatherPage> {
     } else if (code >= 802) {
       _color = Colors.blueGrey;
     }
+  }
+
+  Image _getWeatherIcon(int code) {
+    String asset = Assets.iconCloud;
+    if (code >= 200 && code <= 299) {
+      asset = Assets.iconThunder;
+    } else if (code >= 300 && code <= 399) {
+      asset = Assets.iconCloudLittleRain;
+    } else if (code >= 500 && code <= 599) {
+      asset = Assets.iconRain;
+    } else if (code >= 600 && code <= 699) {
+      asset = Assets.iconSnow;
+    } else if (code >= 700 && code <= 799) {
+      asset = Assets.iconDust;
+    } else if (code == 800) {
+      asset = Assets.iconSun;
+    } else if (code == 801) {
+      asset = Assets.iconCloudSun;
+    } else if (code >= 802) {
+      asset = Assets.iconCloud;
+    }
+    return Image.asset(
+      asset,
+      width: 20,
+      height: 20,
+    );
   }
 }

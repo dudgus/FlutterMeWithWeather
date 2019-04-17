@@ -13,6 +13,9 @@ void main() {
 
     setUpAll(() async {
       final uri = buildUri('/weather', location);
+
+      print('weather today: $uri');
+
       response = await Dio().get(uri.toString());
     });
 
@@ -33,6 +36,9 @@ void main() {
 
     setUpAll(() async {
       final uri = buildUri('/forecast', location);
+
+      print('forecast: $uri');
+
       response = await Dio().get(uri.toString());
     });
 

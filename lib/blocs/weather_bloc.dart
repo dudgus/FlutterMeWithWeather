@@ -72,7 +72,9 @@ class WeatherBloc {
         await data.getForecasts(latLng: location.latLng);
 
     List<Weather> forecast = List();
-    weathers.forEach((weather) {
+    weathers
+        .where((weather) => weather.timeText.contains('12:00:00'))
+        .forEach((weather) {
       weather.name = location.city;
       forecast.add(_convert(weather));
     });
@@ -100,7 +102,9 @@ class WeatherBloc {
     final double clouds = weather.cloud.all;
     final String city = weather.name;
     final DateTime time =
-        DateTime.fromMicrosecondsSinceEpoch(weather.time * 1000);
+        DateTime.fromMillisecondsSinceEpoch(weather.time*1000, isUtc: true);
+
+    print('updated : $time');
 
     return Weather(code, main, desc, temp, tempMax, tempMin, pressure, humidity,
         windSpeed, windDeg, clouds, time, city);
