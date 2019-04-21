@@ -60,7 +60,7 @@ class WeatherBloc {
   void updateWeather({Location location}) async {
     LatLng latLng = await _getLatLng(location);
     Weather weather = _convert(await data.getWeather(latLng: latLng));
-    weather.city = await _getKorFormattedCityName(weather);
+    weather.city = await _getKorFormattedCityName(latLng);
 
     _weather.sink.add(weather);
 
@@ -102,7 +102,7 @@ class WeatherBloc {
     final double clouds = weather.cloud.all;
     final String city = weather.name;
     final DateTime time =
-        DateTime.fromMillisecondsSinceEpoch(weather.time*1000, isUtc: true);
+        DateTime.fromMillisecondsSinceEpoch(weather.time * 1000, isUtc: true);
 
     print('updated : $time');
 
@@ -110,21 +110,28 @@ class WeatherBloc {
         windSpeed, windDeg, clouds, time, city);
   }
 
-  Future<String> _getKorFormattedCityName(Weather weather) async {
-    data.Address address = await data.getAddress(query: weather.city);
+  Future<String> _getKorFormattedCityName(LatLng latLng) async {
+    data.Address address = (await data.getAddresses(location: latLng))[0];
     return _pickLastThreeNames(address);
   }
 
   String _pickLastThreeNames(data.Address address) {
-    String formatted = '';
-    List<String> split = address.formatted.split(' ');
-    if (split.length > 3) {
-      int len = split.length;
-      formatted = '${split[len - 3]} ${split[len - 2]} ${split[len - 1]}';
-    } else {
-      formatted = address.formatted;
-    }
-    return formatted;
+    List<String> formatted = List();
+    address.components.forEach((comp) {
+      print(comp.longName + ' ' + comp.types.toString());
+      if (_notContainsWrongAddressCode(comp.types))
+        formatted.add(comp.longName);
+    });
+    return formatted.reversed.join(' ');
+  }
+
+  bool _notContainsWrongAddressCode(List<String> types) {
+    return !(types.contains('postal_code') ||
+        types.contains('premise') ||
+        types.contains('country') ||
+        types.contains('administrative_area_level_1') ||
+        types.contains('administrative_area_level_4') ||
+        types.contains('sublocality_level_4'));
   }
 
   String _convertDesc(int code) {

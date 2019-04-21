@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_weather/blocs/weather_bloc.dart';
-import 'package:flutter_weather/data/assets/assets.dart';
-import 'package:flutter_weather/widgets/weather_today/weather_temp_combined.dart';
+import 'package:flutter_weather/widgets/forecast/forecast_list.dart';
 import 'package:flutter_weather/widgets/gradient_container.dart';
 import 'package:flutter_weather/widgets/weather_today/weather_last_updated.dart';
 import 'package:flutter_weather/widgets/weather_today/weather_location.dart';
+import 'package:flutter_weather/widgets/weather_today/weather_temp_combined.dart';
 
 class WeatherPage extends StatefulWidget {
   final Location address;
@@ -40,19 +40,15 @@ class _WeatherPageState extends State<WeatherPage> {
     _weatherBloc.updateWeather(location: widget.address);
 
     return Scaffold(
-      appBar: _buildAppBar(),
+      appBar: _buildAppBar(context),
       body: _buildBody(),
     );
   }
 
-  Widget _buildAppBar() {
+  Widget _buildAppBar(context) {
     return AppBar(
-      title: Text('Flutter Weather'),
+      title: Center(child: Text('Flutter Weather')),
       actions: <Widget>[
-        IconButton(
-          icon: Icon(Icons.settings),
-          onPressed: () {},
-        ),
         IconButton(
           icon: Icon(Icons.search),
           onPressed: () {},
@@ -102,26 +98,7 @@ class _WeatherPageState extends State<WeatherPage> {
                         ),
                       ),
                     ),
-                    StreamBuilder(
-                        stream: _weatherBloc.forecast,
-                        builder: (
-                          context,
-                          AsyncSnapshot<List<Weather>> forecastSnapshot,
-                        ) {
-                          if (forecastSnapshot.hasData) {
-                            List<Widget> forecastWidgets = List();
-                            forecastSnapshot.data.forEach((weather) {
-                              forecastWidgets
-                                  .add(_getWeatherIcon(weather.code));
-                            });
-
-                            return Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: forecastWidgets,
-                            );
-                          }
-                          return CircularProgressIndicator();
-                        }),
+                    ForecastListWidget(weatherBloc: this._weatherBloc),
                   ],
                 ),
               ),
@@ -132,7 +109,9 @@ class _WeatherPageState extends State<WeatherPage> {
             );
           } else {
             return Center(
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(
+                valueColor: new AlwaysStoppedAnimation<Color>(Colors.white),
+              ),
             );
           }
         });
@@ -156,31 +135,5 @@ class _WeatherPageState extends State<WeatherPage> {
     } else if (code >= 802) {
       _color = Colors.blueGrey;
     }
-  }
-
-  Image _getWeatherIcon(int code) {
-    String asset = Assets.iconCloud;
-    if (code >= 200 && code <= 299) {
-      asset = Assets.iconThunder;
-    } else if (code >= 300 && code <= 399) {
-      asset = Assets.iconCloudLittleRain;
-    } else if (code >= 500 && code <= 599) {
-      asset = Assets.iconRain;
-    } else if (code >= 600 && code <= 699) {
-      asset = Assets.iconSnow;
-    } else if (code >= 700 && code <= 799) {
-      asset = Assets.iconDust;
-    } else if (code == 800) {
-      asset = Assets.iconSun;
-    } else if (code == 801) {
-      asset = Assets.iconCloudSun;
-    } else if (code >= 802) {
-      asset = Assets.iconCloud;
-    }
-    return Image.asset(
-      asset,
-      width: 20,
-      height: 20,
-    );
   }
 }

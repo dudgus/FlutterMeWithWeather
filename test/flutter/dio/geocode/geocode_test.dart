@@ -39,9 +39,13 @@ void main() {
       expect(response.statusCode, equals(200));
     });
 
-    test('check json serialized data', () {
+    test('check json serialized data', ()
+    {
       List<Address> addresses = _toAddressList(response.data);
-      addresses.forEach((address) => { print(address.formatted) });
+      addresses.forEach((address) =>
+      {
+        print(address.formatted)
+      });
     });
   });
 }
