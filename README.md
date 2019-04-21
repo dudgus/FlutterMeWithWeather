@@ -19,7 +19,7 @@
     
 ### BLoC 패턴
 
-- [Flutter BLoC Package](https://medium.com/flutter-community/flutter-bloc-package-295b53e95c5c) 
+- [Flutter BLoC Package](https://medium.com/flutter-pcommunity/flutter-bloc-package-295b53e95c5c)
 - [BLoC Architecture — Why so important?](https://medium.com/flutter-community/bloc-architecture-why-so-important-d9b29f06680e)
 
 ### 앱 디렉토리 구조
